@@ -34,7 +34,7 @@ def regressao_logistica(df, string_model = ''):
     
     #Cria objeto com efeitos marginais da logistica
     efeitos_marginais = lr.get_margeff(at='overall', method='dydx', atexog=None, dummy=False, count=False).summary()
-    
+    return(print(lr.summary()), print(efeitos_marginais))
     
     
     
@@ -54,12 +54,5 @@ def regressao_linear(df, string_model = ''):
    
     #faz append dos coeficientes e dos p-valores para observamos todos juntos num dataframe
     coeficientes = coeficientes.append(p_values)
-    
-    
-    
-   
+  
     return(print(lr.summary()))
-   
-   
-   
-    return(print(lr.summary()), print(efeitos_marginais))   
